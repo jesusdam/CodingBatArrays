@@ -8,14 +8,39 @@
  *
  * @author xp
  */
+
 public class VentanaCodingBat extends javax.swing.JFrame {
 
     /**
      * Creates new form VentanaCodingBat
      */
+      int arrayNuevo[] = new int[2];
+  
     public VentanaCodingBat() {
         initComponents();
+        
     }
+ 
+
+public int[] front11(int[] a, int[] b) {
+   
+  if (a.length == 0 && b.length == 0) {
+    return a;
+  }
+  if (a.length == 0) {
+    int[] arrayNuevo = new int[] {b[0]};
+    return arrayNuevo;
+  }
+   
+  if (b.length == 0) {
+    int[] arrayNuevo = new int[] {a[0]};
+    return arrayNuevo;
+  }
+   
+  int[] arrayNuevo = new int[] {a[0], b[0]};
+  return arrayNuevo;    
+}
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,21 +51,50 @@ public class VentanaCodingBat extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jButton2.setText("Ejecutar");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton2MousePressed(evt);
+            }
+        });
+
+        jLabel1.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(jButton2)
+                .addContainerGap(173, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jLabel1))
+                .addContainerGap(255, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MousePressed
+     int a [] = {4};
+     int b [] = {4,3};
+     int miArray[] = front11(a, b);
+           jLabel1.setText("" + miArray[0] + miArray[1] );
+    }//GEN-LAST:event_jButton2MousePressed
 
     /**
      * @param args the command line arguments
@@ -78,5 +132,7 @@ public class VentanaCodingBat extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
