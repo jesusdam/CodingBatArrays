@@ -6,7 +6,7 @@
 
 /**
  *
- * @author xp
+ * @author gsus
  */
 
 public class VentanaCodingBat extends javax.swing.JFrame {
@@ -14,6 +14,9 @@ public class VentanaCodingBat extends javax.swing.JFrame {
     /**
      * Creates new form VentanaCodingBat
      */
+    
+    //A continuacion creamos un array nuevo que nos de los primeros parametros
+    //2 arrays que nos dan
       int arrayNuevo[] = new int[2];
   
     public VentanaCodingBat() {
@@ -23,20 +26,26 @@ public class VentanaCodingBat extends javax.swing.JFrame {
  
 
 public int[] front11(int[] a, int[] b) {
-   
+   //En este caso queremos decirle que si los arrays a o b tienen una longitud
+    //de 0 que nos de vuelva a,podiamops haberlo hecho tambien diciendole que
+    //nos devolviese b.
   if (a.length == 0 && b.length == 0) {
     return a;
   }
+  //en caso de que a tenga una longitud de 0 queremos que se nos muestre el valor
+  //del array b.
   if (a.length == 0) {
     int[] arrayNuevo = new int[] {b[0]};
     return arrayNuevo;
   }
-   
+   //en caso de que b tenga una longitud de 0 queremos que se nos muestre el valor
+  //del array b.
   if (b.length == 0) {
     int[] arrayNuevo = new int[] {a[0]};
     return arrayNuevo;
   }
-   
+   //En este caso queremos que nos muestre los primeros valores de a y b puesto
+  //la longitud de los arrays es mayor a 0.
   int[] arrayNuevo = new int[] {a[0], b[0]};
   return arrayNuevo;    
 }
@@ -88,7 +97,9 @@ public int[] front11(int[] a, int[] b) {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//Ejemplificamos con 2 arrays que queremos,y debemos de darle un nombre al
+   // nuevo array con el fin de que nos aparezcan los primeros valores de a y b en 
+     // el ejemplo.
     private void jButton2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MousePressed
      int a [] = {4};
      int b [] = {4,3};
